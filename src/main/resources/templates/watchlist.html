@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Watchlist</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Watchlist</h1>
+
+        <!-- Search Bar to Add Stocks -->
+        <div class="search-bar">
+            <input type="text" id="stockSymbol" placeholder="Search for a stock (e.g., TSLA)" autocomplete="off">
+            <button onclick="addStock()">Add Stock</button>
+        </div>
+
+        <!-- Watchlist Cards -->
+        <div id="watchlistCards" class="cards-container">
+            <!-- Cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+
+</body>
+</html>
