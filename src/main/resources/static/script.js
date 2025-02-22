@@ -112,7 +112,7 @@ function updateWatchlistCards() {
 }
 
 
-async function deleteStock(symbol) {
+async function removeStock(symbol) {
     try {
         const response = await fetch(`http://localhost:8080/api/watchlist/delete/${symbol}`, {
             method: "DELETE"

@@ -1,5 +1,6 @@
 package com.market_apps.user_watchlist;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -40,6 +41,13 @@ public class WatchlistController {
     public ResponseEntity<String> addStock(@RequestBody Watchlist stock) {
         service.saveStock(stock);
         return new ResponseEntity<>(stock.getSymbol() + " added to watchlist!", HttpStatus.CREATED);
+    }
+
+
+    @Transactional
+    @DeleteMapping("/delete/{symbol}")
+    public ResponseEntity<String> deleteStock(@PathVariable String symbol){
+         return new ResponseEntity<>(service.deleteStock(symbol),HttpStatus.OK);
     }
 
 
